@@ -1,0 +1,36 @@
+package com.bridgelabz.servletprograms;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginPage extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		UserInfo userinfo=new UserInfo();
+		String n=req.getParameter("password");
+		 // req.setAttribute("attributeName",n);
+//	        RequestDispatcher rd = req.getRequestDispatcher("index.html");
+//	        rd.forward(req,resp);
+		userinfo.setName(req.getParameter("name"));
+		userinfo.setPassword(req.getParameter("password"));
+		System.out.println(userinfo.getName());
+		System.out.println(userinfo.getPassword());
+        PrintWriter out = resp.getWriter(); 
+		if(n.equals("123")) {
+			RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
+			rd1.forward(req, resp);  
+	        resp.setContentType("text/html"); 		
+	        }
+		  else{ 
+	            out.print("Password mismatch"); 
+//	            RequestDispatcher rd1 = req.getRequestDispatcher("index.html"); 
+//	        rd1.include(req, resp);   
+	        }   
+	}
+}

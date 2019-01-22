@@ -1,0 +1,24 @@
+package com.bridgelabz.servletprograms;
+
+
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class LoginRegistatrionApp extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String firstName=req.getParameter("First Name");
+		String lastName=req.getParameter("First Name");
+		String gender=req.getParameter("First Name");
+		System.out.println(firstName);
+		System.out.println(lastName);
+		System.out.println(gender);
+	}
+}

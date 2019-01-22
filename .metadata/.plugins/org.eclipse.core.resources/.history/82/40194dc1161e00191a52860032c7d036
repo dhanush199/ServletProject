@@ -1,0 +1,32 @@
+package com.bridgelabz.servletprograms;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginRegistatrionApp extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<UserInfo> listOfuserInfo=new ArrayList<>();
+		Long phoneNumber=Long.parseLong(req.getParameter("phoneNumber"));
+		//req.getContentLengthLong("phoneNumber");
+		UserInfo userInfo=new UserInfo();
+		userInfo.setName(req.getParameter("email"));
+		userInfo.setGender(req.getParameter("gender"));
+		userInfo.setPhoneNumber(req.getParameter(phoneNumber));
+//		String email=req.getParameter("email");
+//		String password=req.getParameter("password");
+//		String phoneNumber=req.getParameter("phoneNumber");
+//		String gender=req.getParameter("gender");
+//		System.out.println(email);
+//		System.out.println(password);
+//		System.out.println(phoneNumber);
+//		System.out.println(gender);		
+	}
+}

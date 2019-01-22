@@ -1,0 +1,11 @@
+package com.bridgelabz.servletprograms;
+
+public class UserInfo {
+	long phoneNumber;
+	String Name,password;
+	String gender;
+	
+
+	
+	
+}
