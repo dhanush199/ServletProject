@@ -15,7 +15,7 @@
   </servlet-mapping>
   <servlet>
   <servlet-name>regservlet</servlet-name>
-  <servlet-class>com.bridgelabz.servletprograms.LoginPage</servlet-class>
+  <servlet-class>com.bridgelabz.configure.dbutil.model.servlet.LoginPage</servlet-class>
   </servlet>
       <servlet-mapping>
   
@@ -24,7 +24,7 @@
   </servlet-mapping>
   <servlet>
   <servlet-name>loginservlet</servlet-name>
-  <servlet-class>com.bridgelabz.servletprograms.LoginRegistatrionApp</servlet-class>
+  <servlet-class>com.bridgelabz.configure.dbutil.model.servlet.LoginRegistatrionApp</servlet-class>
   </servlet>
   
 </web-app>

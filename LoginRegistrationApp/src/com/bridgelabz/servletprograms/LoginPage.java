@@ -20,6 +20,7 @@ public class LoginPage extends HttpServlet{
 		System.out.println(userinfo.getPassword());
 		String name=req.getParameter("name");
 		PrintWriter out = resp.getWriter(); 
+		out.write("<b> Welcome <b>");
 		if(n.equals("123")) {
 			RequestDispatcher rd1 = req.getRequestDispatcher("home.html");
 			req.setAttribute("name", userinfo);
