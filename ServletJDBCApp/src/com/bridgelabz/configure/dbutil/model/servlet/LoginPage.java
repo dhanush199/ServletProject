@@ -20,19 +20,19 @@ public class LoginPage extends HttpServlet{
 		PrintWriter out = resp.getWriter(); 
 		out.write("<b> Welcome <b>");
 		try {
-		UserInfo isUserPresent=GetUserData.getUserDetails(userinfo);
-		if(isUserPresent!=null) {
-			RequestDispatcher rd1 = req.getRequestDispatcher("home.html");
-			rd1.forward(req, resp);  
-		}
-		else{ 
-			out.print("Password incorrect!!"); 
-			RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
-			rd1.include(req, resp);  
-		}
+			UserInfo isUserPresent=GetUserData.getUserDetails(userinfo);
+			if(isUserPresent!=null) {
+				RequestDispatcher rd1 = req.getRequestDispatcher("home.html");
+				rd1.forward(req, resp);  
+			}
+			else{ 
+				out.print("Password incorrect!!"); 
+				RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
+				rd1.include(req, resp);  
+			}
 		}catch(Exception e) {
 			System.out.println("404 finding....");
-			
+
 		}
 	}
 }

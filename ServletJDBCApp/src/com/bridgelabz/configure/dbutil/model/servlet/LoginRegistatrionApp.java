@@ -30,15 +30,11 @@ public class LoginRegistatrionApp extends HttpServlet {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-
 		display(userInfo);
 		PrintWriter out = resp.getWriter(); 
 		out.write("<b> Successfully Registered <b>");
-		RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
-		rd1.include(req, resp);  
-		//GetUserData.getUserDetails(userInfo);
-//		String password = (String)req.getAttribute("password");
-//		String name = (String)req.getAttribute("name");
+//		RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
+//		rd1.include(req, resp);  
 	}
 	public void display(UserInfo userInfo2) {
 		System.out.println("Name:         "+ userInfo2.getName());

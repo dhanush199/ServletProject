@@ -35,6 +35,13 @@ public class UpdateToDataBase
 		preparedStmt.setString (4,userInfo.getPhoneNumber() );
 		preparedStmt.setString(5, userInfo.getPassword());
 		preparedStmt.execute();
+		System.out.println("Corresponding key is "+preparedStmt.getGeneratedKeys());
+		DatabaseMetaData d=conn.getMetaData();
+		System.out.println("Driver version is "+ d.getDriverVersion());
+		System.out.println("Driver version is "+ d.getDriverName());
+		System.out.println("Driver version is "+ d.getDriverVersion());
+		System.out.println("Driver version is "+ d.getDatabaseProductName());
+		System.out.println("Driver version is "+ d.getDatabaseProductVersion());
 		conn.close();
 	}
 }

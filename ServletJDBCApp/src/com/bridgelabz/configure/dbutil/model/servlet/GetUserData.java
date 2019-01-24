@@ -3,6 +3,7 @@ package com.bridgelabz.configure.dbutil.model.servlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import com.mysql.jdbc.PreparedStatement;
@@ -26,12 +27,9 @@ public class GetUserData
 			// Open a connection
 			//Connection conn=UpdateToDataBase.getMySQLConnection("localhost",DB_URL, USER, PASS);
 		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
 			// Execute SQL query
 		String sql,userName;
 		userName=userinfo.getName();
-		
-		
 		sql = "SELECT * FROM USERINFO Where name=? and password=?";
 		java.sql.PreparedStatement preStatement=conn.prepareStatement(sql);
 		preStatement.setString(1,userinfo.getName() );
@@ -39,13 +37,24 @@ public class GetUserData
 			ResultSet rs = preStatement.executeQuery();
 			// Extract data from result set
 			while(rs.next()){
-				user=new UserInfo();
+				flag=1;
+				//user=new UserInfo();
 				System.out.println("password = "+rs.findColumn("password"));
 			}
+			if(flag==1) {
+				user=new UserInfo();
+			}
+////////////////////
+	ResultSetMetaData rm=rs.getMetaData();
+	int colCount=rm.getColumnCount();
+	for(int i=0;i<colCount-1;i++) {
+		System.out.println("Colum name is "+rm.getColumnName(i));
+		System.out.println("Colum name is "+rm.getColumnType(i));
+	}
+	///////////////////
 			rs.close();
 		//	stmt.close();
 			conn.close();
-			
 			// Clean-up environment
 			
 		}catch(SQLException se){
