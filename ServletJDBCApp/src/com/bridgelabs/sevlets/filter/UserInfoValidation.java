@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UserInfoValidation implements 	Filter {
-	//static final String REGEX_EMAIL_ID = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$";
-	//static final String REGEX_PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+	//static final String REGEX_EMAIL_ID = "^[a-z0-9._%+-]+@[A-Z0-9.-]+\\\\.[a-z]{2,6}$";
+	static final String REGEX_PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
 	static final String REGEX_CONTACT = "^[0-9]{10}$";
-
+	
 	public void init(FilterConfig arg0) throws ServletException {
 	}
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chainObj)
@@ -29,8 +29,8 @@ public class UserInfoValidation implements 	Filter {
 		String emailid = request.getParameter("email");
 		String password = request.getParameter("password");
 		String contact = request.getParameter("phoneNumber");
-		//if (emailid.matches(REGEX_EMAIL_ID) && (password.matches(password)) && (contact.matches(REGEX_CONTACT))) {
-			if((contact.matches(REGEX_CONTACT))){
+		if (/*emailid.matches(REGEX_EMAIL_ID) &&*/ (password.matches(password)) && (contact.matches(REGEX_CONTACT))) {
+			//if((contact.matches(REGEX_CONTACT)&& (password.matches(REGEX_PASSWORD)))){
 				chainObj.doFilter(request, response);
 			}
 		 else {
@@ -38,7 +38,6 @@ public class UserInfoValidation implements 	Filter {
 			out.write("<b> Please enter the valid name or E-mail ID or Phone Number <b>");
 			requestDispatcher = request.getRequestDispatcher("/index.html");
 			requestDispatcher.include(request, response);
-		
 		}
 	}
 	public void destroy() {

@@ -4,16 +4,12 @@
 		<item value="659" key="dialogHeight"/>
 		<item value="783" key="dialogWidth"/>
 		<list key="textEntries">
-			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPartServers/Tomcat v8.5 Server at localhost-config/server.xml"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.editors"/>
 		</list>
 		<list key="textArray">
-			<item value="server"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

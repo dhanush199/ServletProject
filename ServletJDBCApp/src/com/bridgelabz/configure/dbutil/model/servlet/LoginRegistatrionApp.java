@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginRegistatrionApp extends HttpServlet {
-	List<UserInfo> listOfuserInfo=new ArrayList<>();
+	//List<UserInfo> listOfuserInfo=new ArrayList<>();
 	UserInfo userInfo=null;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class LoginRegistatrionApp extends HttpServlet {
 		userInfo.setGender(req.getParameter("gender"));
 		userInfo.setPassword(req.getParameter("password"));
 		userInfo.setPhoneNumber(phoneNumber);
-		listOfuserInfo.add(userInfo);
+	//	listOfuserInfo.add(userInfo);
 		try {
 			UpdateToDataBase.registration(userInfo);
 		} catch (ClassNotFoundException | SQLException e) {
