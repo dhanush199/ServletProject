@@ -3,9 +3,6 @@ package com.bridgelabz.configure.dbutil.model.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginRegistatrionApp extends HttpServlet {
 	//List<UserInfo> listOfuserInfo=new ArrayList<>();
 	UserInfo userInfo=null;
+	static final long serialVersionUID =123456L;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserInfo userInfo=new UserInfo();
@@ -30,11 +28,11 @@ public class LoginRegistatrionApp extends HttpServlet {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		display(userInfo);
+		//display(userInfo);
 		PrintWriter out = resp.getWriter(); 
 		out.write("<b> Successfully Registered <b>");
-//		RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
-//		rd1.include(req, resp);  
+		RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
+		rd1.include(req, resp);  
 	}
 	public void display(UserInfo userInfo2) {
 		System.out.println("Name:         "+ userInfo2.getName());

@@ -4,12 +4,16 @@
 		<item value="659" key="dialogHeight"/>
 		<item value="783" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.wst.server.ui.ServersView"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
+			<item value="s erver"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
@@ -18,5 +22,7 @@
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.jdt.ui.java"/>
 		</list>
+	</section>
+	<section name="ImportExportAction">
 	</section>
 </section>

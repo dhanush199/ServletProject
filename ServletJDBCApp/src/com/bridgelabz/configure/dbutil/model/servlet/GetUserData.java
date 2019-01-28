@@ -46,11 +46,11 @@ public class GetUserData
 			}
 ////////////////////
 	ResultSetMetaData rm=rs.getMetaData();
-	int colCount=rm.getColumnCount();
-	for(int i=0;i<colCount-1;i++) {
-		System.out.println("Colum name is "+rm.getColumnName(i));
-		System.out.println("Colum name is "+rm.getColumnType(i));
-	}
+//	int colCount=rm.getColumnCount();
+//	for(int i=0;i<colCount-1;i++) {
+//		System.out.println("Colum name is "+rm.getColumnName(i));
+//		System.out.println("Colum name is "+rm.getColumnType(i));
+//	}
 	///////////////////
 			rs.close();
 		//	stmt.close();
