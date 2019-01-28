@@ -5,7 +5,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 Logged off successfully
-<a href=login.html>Sign Out</a><br>
+<%
+session.invalidate();
+%>
+<a href=login.jsp>Sign Out</a><br>
 </body>
 </html>

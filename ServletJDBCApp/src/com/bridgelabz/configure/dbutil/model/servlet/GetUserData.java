@@ -3,10 +3,12 @@ package com.bridgelabz.configure.dbutil.model.servlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.PreparedStatement;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 public class GetUserData
 {
 	// JDBC driver name and database URL
@@ -19,7 +21,7 @@ public class GetUserData
 	static final String PASS = "password";
 	static int flag=0;
 	static  UserInfo user=null;
-	public static UserInfo getUserDetails(UserInfo userinfo)
+	public static UserInfo getUserDetails(UserInfo userinfo, HttpServletRequest req, HttpServletResponse resp)
 	{
 		try{
 			// Register JDBC driver
@@ -28,8 +30,8 @@ public class GetUserData
 			//Connection conn=UpdateToDataBase.getMySQLConnection("localhost",DB_URL, USER, PASS);
 		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			// Execute SQL query
-		String sql,userName;
-		userName=userinfo.getName();
+		String sql;
+		//String userName=userinfo.getName();
 		sql = "SELECT * FROM USERINFO Where name=? and password=?";
 		java.sql.PreparedStatement preStatement=conn.prepareStatement(sql);
 		preStatement.setString(1,userinfo.getName() );
@@ -38,14 +40,13 @@ public class GetUserData
 			// Extract data from result set
 			while(rs.next()){
 				flag=1;
-				//user=new UserInfo();
 				System.out.println("password = "+rs.findColumn("password"));
 			}
 			if(flag==1) {
 				user=new UserInfo();
 			}
 ////////////////////
-	ResultSetMetaData rm=rs.getMetaData();
+	//ResultSetMetaData rm=rs.getMetaData();
 //	int colCount=rm.getColumnCount();
 //	for(int i=0;i<colCount-1;i++) {
 //		System.out.println("Colum name is "+rm.getColumnName(i));
