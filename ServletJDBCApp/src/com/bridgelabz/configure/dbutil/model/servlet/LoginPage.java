@@ -17,16 +17,11 @@ public class LoginPage extends HttpServlet{
 		UserInfo userinfo=new UserInfo();
 		userinfo.setName(req.getParameter("name"));
 		userinfo.setPassword(req.getParameter("password"));
-		String password=userinfo.getPassword();
+		//String password=userinfo.getPassword();
 		PrintWriter out = resp.getWriter(); 
-		//adding cookie in the response 
 		Cookie cookie1=new Cookie("user",req.getParameter("name"));//creating cookie object  
 		cookie1.setMaxAge(10);
 		resp.addCookie(cookie1);
-	//	cookie1.setMaxAge(1);
-//		Cookie cookie2=new Cookie("userPassword",password);
-//		cookie2.setMaxAge(10);
-//		resp.addCookie(cookie2);
 		out.write("<b> Welcome <b>");
 		try 
 		{
@@ -34,13 +29,10 @@ public class LoginPage extends HttpServlet{
 			if(isUserPresent!=null) 
 			{
 				HttpSession session=req.getSession();
-				session.setAttribute("name", userinfo.getName());
-				String name=userinfo.getName();
+				session.setAttribute("USERInfo",isUserPresent);
+				String name=isUserPresent.getName();
 				resp.sendRedirect("welcome.jsp?name="+name);
 				cookie1.setMaxAge(2);
-				resp.sendRedirect("login.html");
-				RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
-				rd1.forward(req, resp);
 			} 
 			else
 			{ 

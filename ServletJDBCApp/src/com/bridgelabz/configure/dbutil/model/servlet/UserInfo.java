@@ -5,6 +5,7 @@ public class UserInfo {
 	String email,password;
 	String gender;
 	String name;
+	UserInfo user;
 //	public UserInfo() {
 //		this.phoneNumber = 0;
 //		this.email = null;
@@ -42,4 +43,11 @@ public class UserInfo {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}	
+	public void setUserInfo(UserInfo users) {
+		this.user=users;
+	}
+	public UserInfo getUserInfo() {
+		return user;
+		
+	}
 }

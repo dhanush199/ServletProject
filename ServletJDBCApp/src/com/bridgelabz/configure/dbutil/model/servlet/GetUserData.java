@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class GetUserData
 {
@@ -34,30 +33,22 @@ public class GetUserData
 		//String userName=userinfo.getName();
 		sql = "SELECT * FROM USERINFO Where name=? and password=?";
 		java.sql.PreparedStatement preStatement=conn.prepareStatement(sql);
-		preStatement.setString(1,userinfo.getName() );
-		preStatement.setString(2,userinfo.getPassword() );
+		preStatement.setString(1,userinfo.getName());
+		preStatement.setString(2,userinfo.getPassword());
 			ResultSet rs = preStatement.executeQuery();
 			// Extract data from result set
 			while(rs.next()){
-				flag=1;
-				System.out.println("password = "+rs.findColumn("password"));
-			}
-			if(flag==1) {
 				user=new UserInfo();
+				user.setEmail(rs.getString(3));
+				user.setName(rs.getString(2));
+				user.setPhoneNumber(rs.getString(4));
+				user.setPassword(rs.getString(5));
+				System.out.println("Name  "+user.getName());
+				System.out.println("Password "+user.getPassword());
 			}
-////////////////////
-	//ResultSetMetaData rm=rs.getMetaData();
-//	int colCount=rm.getColumnCount();
-//	for(int i=0;i<colCount-1;i++) {
-//		System.out.println("Colum name is "+rm.getColumnName(i));
-//		System.out.println("Colum name is "+rm.getColumnType(i));
-//	}
-	///////////////////
 			rs.close();
-		//	stmt.close();
 			conn.close();
 			// Clean-up environment
-			
 		}catch(SQLException se){
 			//Handle errors for JDBC
 			se.printStackTrace();

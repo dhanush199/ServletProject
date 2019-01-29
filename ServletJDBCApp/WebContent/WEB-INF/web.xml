@@ -33,4 +33,14 @@
     <filter-name>filterservlet</filter-name>
     <filter-class>com.bridgelabs.sevlets.filter.UserInfoValidation</filter-class>
   </filter>
+  <servlet>
+    <description></description>
+    <display-name>EditUserInfo</display-name>
+    <servlet-name>EditUserInfo</servlet-name>
+    <servlet-class>com.bridgelabz.configure.dbutil.model.servlet.EditUserInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserInfo</servlet-name>
+    <url-pattern>/editinfo</url-pattern>
+  </servlet-mapping>
 </web-app>
