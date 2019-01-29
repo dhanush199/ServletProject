@@ -11,9 +11,9 @@
 		<fieldset>
 			<legend>Login Page</legend>
 			Old Phone number:<br> <input type="number" name="phoneNumber"><br>
-			Email id:<br> <input type="text" name="email"><br>
-			Name:<br> <input type="text" name="name1"><br>
-			password:<br> <input type="password" name="password"><br>
+			New Email id:<br> <input type="text" name="email"><br>
+			New Name:<br> <input type="text" name="name1"><br>
+			New password:<br> <input type="password" name="password"><br>
 			<br> <input type="submit" value="submit">
 		</fieldset>
 		<a href=login.html>Login</a><br>

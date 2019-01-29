@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {
+	background-image:
+		url("https://colinbendell.cloudinary.com/image/upload/c_crop,f_auto,g_auto,h_350,w_400/v1512090971/Wizard-Clap-by-Markus-Magnusson.gif");
+	background-repeat: no-repeat, repeat;
+	background-color: light black;
+}
+</style>
 <meta charset="UTF-8">
-
-<title>Login Page</title>
+<title></title>
+<h2 style="color: blue">Welcome</h2>
 </head>
+<style>
+p {
+	color: red;
+	text-align: center;
+}
+</style>
+<div>
+	<p id='para1'></p>
+</div>
+<body>
+	<form action="login" method="get">
+		<fieldset>
+			<div class='container'>
 
-	<body>
-		<form action="login" method="get">
-			<fieldset>
-			<div align="center">
-				 <legend> Login Page </legend> 
-				name:<br> <input type="text" name="name" required="required"><br>
-				password:<br> <input type="password" name="password"
-					required="required"><br> <input type="submit"
-					value="submit"> <a href=index.html>Sign Up</a><br>
-					</div>
-			</fieldset>
-		</form>
-	</body>
+				<div align="center">
+					<legend>
+						<h3 style="color: blue">Login Page</h3>
+					</legend>
+					<p>
+						Name:<br> <input type="text" name="name" required="required"><br>
+						Password:<br> <input type="password" name="password"
+							required="required"><br> <input type="submit"
+							value="submit"> <a href=index.html>Sign Up</a><br>
+					<p>
+				</div>
+		</fieldset>
+	</form>
+</body>
+
 </html>

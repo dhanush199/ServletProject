@@ -5,11 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	Logged off successfully
+	<%
+	response.sendRedirect("startPage.jsp?name=");
 
-Logged off successfully
-<%
-session.invalidate();
 %>
-<a href=login.jsp>Sign Out</a><br>
+	<a href=login.html>Sign In</a>
+	<br>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class EditUserInfo extends HttpServlet{
 			preparedStmt.setString(2, req.getParameter("email"));
 			preparedStmt.setString(3, req.getParameter("password"));
 			preparedStmt.setString(4, req.getParameter("phoneNumber"));
-			preparedStmt.executeUpdate();
+				preparedStmt.executeUpdate();
 			PrintWriter out = resp.getWriter(); 
 			out.write("<b> UserInfo Successfully updated <b>");
 			RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
