@@ -24,7 +24,7 @@ public class EditUserInfo extends HttpServlet{
 			preparedStmt.executeUpdate();
 			PrintWriter out = resp.getWriter(); 
 			out.write("<b> UserInfo Successfully updated <b>");
-			RequestDispatcher rd1 = req.getRequestDispatcher("logion.html"); 
+			RequestDispatcher rd1 = req.getRequestDispatcher("login.html"); 
 			rd1.include(req, resp);  
 		}catch(SQLException | ClassNotFoundException s) {
 			PrintWriter out = resp.getWriter(); 

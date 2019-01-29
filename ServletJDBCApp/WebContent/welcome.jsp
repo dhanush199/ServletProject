@@ -9,9 +9,10 @@
 </head>
 <body>
 <h1>You are on Home page</h1>
+Hi  <br>
 <%
 String name=request.getParameter("name");
-out.println("Welcome : "+name);
+out.println("Welcome : ");
 UserInfo isUserPresent=(UserInfo)session.getAttribute("USERInfo");
 String userName = null;
 Cookie[] cookies = request.getCookies();
@@ -19,13 +20,13 @@ Cookie[] cookies = request.getCookies();
 		if (cookie.getName().equals("user"))
 			userName = cookie.getValue();
 	}
-
 %>
-	Hi
-		<%out.println("User Name= "+isUserPresent.getName());%>, Login successful.
-		<%out.println("User Password= "+isUserPresent.getPassword());%>
-		<%out.println("User Email= "+isUserPresent.getEmail());%>
-	   <%out.println("User PhoneNum= "+isUserPresent.getPhoneNumber());%>
+<br>Login Successful<br>
+	   <%out.println("User Name= "+isUserPresent.getName());%> <br>
+		<%out.println("User Password= "+isUserPresent.getPassword());%> <br>
+		<%out.println("User Email= "+isUserPresent.getEmail());%> <br>
+	   <%out.println("User PhoneNum= "+isUserPresent.getPhoneNumber());%> <br>
+	   <%out.println("Session ID= "+session.getId());%> <br>
 		
 <a href=login.html>Sign Out</a><br>
 <a href=editUserInfo.jsp>Edit user Info</a><br>
